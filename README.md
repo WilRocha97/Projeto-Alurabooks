@@ -10,4 +10,4 @@ feito um curso.
 ## Feito por
 ### Willian Rodrigues
 
-![Alurabooks](https://github.com/WilRocha97/Meu-site/blob/b407af7c14f23a0e24cb11db94b6c0b93e79911b/Portfolio/assets/AluraBooks.png)
+![Alurabooks](https://github.com/WilRocha97/Portifolio/blob/main/assets/Sites/AluraBooks.png)
