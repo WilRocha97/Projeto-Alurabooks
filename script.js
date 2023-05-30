@@ -4,14 +4,16 @@ var logradouro = document.getElementById('endereco')
 var bairro = document.getElementById('bairro')
 var estado = document.getElementById('estado')
 
-async function buscaEndereco(cep) {
+async function buscaEndereco(cepInserio) {
     try {
-        var consultaCEP = await fetch(`https://viacep.com.br/ws/${cep}/json/`)
+        var consultaCEP = await fetch(`https://viacep.com.br/ws/${cepInserio}/json/`)
         var consultaCEPJSON = await consultaCEP.json()
         if (consultaCEPJSON.erro) {
             throw Error('Este CEP não existe.')
         }
 
+        console.log(consultaCEPJSON)
+        cep.value = consultaCEPJSON.cep
         cidade.value = consultaCEPJSON.localidade
         logradouro.value = consultaCEPJSON.logradouro
         bairro.value = consultaCEPJSON.bairro
