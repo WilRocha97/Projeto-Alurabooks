@@ -3,17 +3,22 @@ var cidade = document.getElementById('cidade')
 var logradouro = document.getElementById('endereco')
 var bairro = document.getElementById('bairro')
 var estado = document.getElementById('estado')
+var mensagemErro = document.getElementById('erro')
 
 async function buscaEndereco(cepInserio) {
+    mensagemErro.innerHTML = ''
     try {
         var consultaCEP = await fetch(`https://viacep.com.br/ws/${cepInserio}/json/`)
         var consultaCEPJSON = await consultaCEP.json()
+
         if (consultaCEPJSON.erro) {
-            throw Error('Este CEP não existe.')
+            mensagemErro.innerHTML = 'Este CEP não existe'
+            cidade.value = ''
+            logradouro.value = ''
+            bairro.value = ''
+            estado.value = ''
         }
 
-        console.log(consultaCEPJSON)
-        cep.value = consultaCEPJSON.cep
         cidade.value = consultaCEPJSON.localidade
         logradouro.value = consultaCEPJSON.logradouro
         bairro.value = consultaCEPJSON.bairro
@@ -21,7 +26,11 @@ async function buscaEndereco(cepInserio) {
 
         return consultaCEPJSON
     } catch(erro) {
-        return ('O CEP deve conter 8 digitos')
+        mensagemErro.innerHTML = 'O CEP deve conter 8 digitos'
+        cidade.value = ''
+        logradouro.value = ''
+        bairro.value = ''
+        estado.value = ''
     }
 }
 
