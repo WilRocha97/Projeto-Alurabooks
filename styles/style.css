@@ -8,26 +8,22 @@
 @import url("cadastro.css");
 
 :root {
+    --preto: #000000;
     --cor-de-fundo: #EBECEE;
     --branco: #FFFFFF;
-    --laranja: #EB9B00;
-    --azul: #002F52;
-    --vermelho: #ff0000;
-    --preto: #000000;
+    --text-tag-color: #9c9c9c;
     --cinza: #474646;
     --cinza-claro: #858585;
+    --laranja: #EB9B00;
+    --text-title-color: #fc6621;
+    --text-description-color: #fc6621;
+    --vermelho: #ff0000;
+    --azul: #002F52;
+    --button-color: #326589;
     --azul-degrade: linear-gradient(97.54deg, #002F52 35.49%, #326589 165.37%);
     --fonte-principal: "Poppins";
     --fonte-secundaria: "Josefin Sans";
-    --transição: 0.3s
-    --bg-color: #ffffff;
-    --button-color: #326589;
-    --text-title-color: #fc6621;
-    --text-description-color: #fc6621;
-    --text-price-color: #002f52;
-    --text-author-color: #858585;
-    --text-tag-color: #9c9c9c;
-    
+    --transição: 0.3s;
 }
 
 body {
@@ -45,7 +41,7 @@ body {
 .header {
     text-align: center;
     width: 100%;
-    background-color: var(--bg-color);
+    background-color: var(--branco);
     margin: 15px 15px;
 }
 
@@ -109,7 +105,7 @@ body {
 .livro__descricao {
     text-align: center;
     font-size: 18px;
-    color: var(--text-author-color);
+    color: var(--cinza-claro);
     margin: 1rem 0;
 }
 
