@@ -33,11 +33,6 @@ body {
     font-weight: 400;
 }
 
-.wrap {
-    width: 1280px;
-    margin: 0 auto;
-}
-
 .header {
     text-align: center;
     width: 100%;
@@ -48,9 +43,10 @@ body {
 
 .nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
-    height: 30px;
+    height: auto;
     margin: 4rem 0;
 }
 
@@ -62,6 +58,7 @@ body {
     text-decoration: none;
     color: #fff;
     padding: 10px 16px;
+    margin: 0.5em;
     border-radius: 8px;
     font-size: 0.9rem;
     font-family: 'Poppins';
@@ -77,8 +74,10 @@ body {
 
 .livros {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    margin: 1rem;
     flex-wrap: wrap;
+    width: auto;
 }
 
 .livro {
@@ -86,8 +85,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 644px;
-    margin-bottom: 1rem;
+    margin: 1rem;
 }
 
 .indisponivel {
