@@ -9,6 +9,6 @@ botoesFiltros.forEach((botao) => {
 function filtraLivros() {
     const elementoBotao = document.getElementById(this.id)
     const categoria = elementoBotao.value
-    let livrosFiltrados = livros.filter(livro => livro.categoria == categoria)
+    let livrosFiltrados = categoria == 'disponivel' ? livros.filter(livro => livro.quantidade > 0) : livros.filter(livro => livro.categoria == categoria)
     exibirLivros(livrosFiltrados)
 }
