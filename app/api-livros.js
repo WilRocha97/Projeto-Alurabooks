@@ -1,6 +1,7 @@
 let livros = []
 const endpoint = 'https://guilhermeonrails.github.io/casadocodigo/livros.json'
 const livrosPai = document.getElementById("livros")
+const elementoValorTotal = document.getElementById("valor_total_livros_disponiveis")
 
 // busca o json com os dados dos livros
 buscaLivrosDaAPI()
@@ -16,6 +17,7 @@ async function buscaLivrosDaAPI() {
 function exibirLivros(livros) {
     // limpa a lista para garantir que quando os filtros forem usados a lista esteja vazia
     livrosPai.innerHTML = ''
+    elementoValorTotal.innerHTML = ''
     livros.forEach(livro => {
         // let disponibilidade = verificaDisponibilidade(livro)
         let disponibilidade = livro.quantidade > 0 ? 'livro__imagens' : 'livro__imagens indisponivel'
