@@ -17,8 +17,10 @@ function exibirLivros(livros) {
     // limpa a lista para garantir que quando os filtros forem usados a lista esteja vazia
     livrosPai.innerHTML = ''
     livros.forEach(livro => {
+        // let disponibilidade = verificaDisponibilidade(livro)
+        let disponibilidade = livro.quantidade > 0 ? 'livro__imagens' : 'livro__imagens indisponivel'
         livrosPai.innerHTML += `<div class="livro">
-                                    <img class="livro__imagens" src="${livro.imagem}" 
+                                    <img class="${disponibilidade}" src="${livro.imagem}" 
                                         alt="${livro.alt}" />
                                     <h2 class="livro__titulo"> ${livro.titulo}</h2>
                                     <p class="livro__descricao">${livro.autor}</p>
@@ -29,3 +31,11 @@ function exibirLivros(livros) {
                                 </div>`
     })
 }
+
+// function verificaDisponibilidade(livro) {
+//    if (livro.quantidade > 0) {
+//        return 'livro__imagens'
+//    } else {
+//        return 'livro__imagens indisponivel'
+//    }
+// }
